@@ -82,3 +82,12 @@ class SearchResult:Codable, CustomStringConvertible {
         case collectionName, collectionPrice, collectionViewUrl
     }
 }
+
+
+func < (lhs: SearchResult, rhs: SearchResult) -> Bool {
+    return lhs.name.localizedStandardCompare(rhs.name) == .orderedAscending
+}
+
+func > (lhs: SearchResult, rhs: SearchResult) -> Bool {
+    return lhs.name.localizedStandardCompare(rhs.name) == .orderedDescending
+}
