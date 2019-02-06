@@ -81,8 +81,7 @@ extension SearchViewController: UISearchBarDelegate {
             let url = iTunesURL(searchText: searchBar.text!)
             print("URL: '\(url)'")
             if let data = performStoreRequest(with: url) {
-                let results = parse(data: data)
-                print("Got results: \(results)")
+                searchResults = parse(data: data)
             }
             tableView.reloadData()
         }
@@ -106,7 +105,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
             let searchResult = searchResults[indexPath.row]
             cell.nameLabel!.text = searchResult.name
-            cell.artistNameLabel!.text = searchResult.artistName
+            if searchResult.artistName.isEmpty {
+                cell.artistNameLabel!.text = "Unknown"
+            } else {
+                cell.artistNameLabel!.text = String(format: "%@ (%@)", searchResult.artistName, searchResult.type)
+            }
+            
             return cell
         }
     }
