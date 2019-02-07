@@ -10,6 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     var searchResult: SearchResult!
+    var downloadTask: URLSessionDownloadTask?
     
     // MARK: - IB Outlets
     @IBOutlet weak var popupView: UIView!
@@ -35,6 +36,10 @@ class DetailViewController: UIViewController {
         super.init(coder: aDecoder)
         modalPresentationStyle = .custom
         transitioningDelegate = self
+    }
+    
+    deinit {
+        downloadTask?.cancel()
     }
 
     override func viewDidLoad() {
@@ -79,6 +84,11 @@ class DetailViewController: UIViewController {
             priceText = ""
         }
         priceButton.setTitle(priceText, for: .normal)
+        
+        // Get image
+        if let largeURL = URL(string: searchResult.imageLarge) {
+            downloadTask = artworkImageView.loadImage(url: largeURL)
+        }
     }
         
     /*
