@@ -55,7 +55,7 @@ class SearchViewController: UIViewController {
             default: kind = ""
         }
         let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        let urlString = String(format: "https://itunes.apple.com/search?term=\(encodedText)&limit=200&entity=\(kind)")
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=200&entity=%@", encodedText, kind)
         let url = URL(string: urlString)
         return url!
     }
@@ -148,13 +148,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
             let searchResult = searchResults[indexPath.row]
-            cell.nameLabel!.text = searchResult.name
-            if searchResult.artistName.isEmpty {
-                cell.artistNameLabel!.text = "Unknown"
-            } else {
-                cell.artistNameLabel!.text = String(format: "%@ (%@)", searchResult.artistName, searchResult.type)
-            }
-            
+            cell.configure(for: searchResult)
             return cell
         }
     }
