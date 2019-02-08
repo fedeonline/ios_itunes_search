@@ -10,6 +10,7 @@
 		8B4CA60D220C621600555806 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CA60C220C621600555806 /* UIImageView+DownloadImage.swift */; };
 		8B4CA60F220C65EC00555806 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CA60E220C65EC00555806 /* DetailViewController.swift */; };
 		8B4CA611220C8F9900555806 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CA610220C8F9900555806 /* DimmingPresentationController.swift */; };
+		8B4CA613220D963600555806 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CA612220D963600555806 /* GradientView.swift */; };
 		8B8AE43E2209DFB200B24839 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AE43D2209DFB200B24839 /* AppDelegate.swift */; };
 		8B8AE4402209DFB200B24839 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8AE43F2209DFB200B24839 /* SearchViewController.swift */; };
 		8B8AE4432209DFB200B24839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B8AE4412209DFB200B24839 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		8B4CA60C220C621600555806 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		8B4CA60E220C65EC00555806 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8B4CA610220C8F9900555806 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		8B4CA612220D963600555806 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		8B8AE43A2209DFB200B24839 /* AppStoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8AE43D2209DFB200B24839 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B8AE43F2209DFB200B24839 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				8B8AE43D2209DFB200B24839 /* AppDelegate.swift */,
 				8B4CA60E220C65EC00555806 /* DetailViewController.swift */,
+				8B4CA612220D963600555806 /* GradientView.swift */,
 				8B4CA610220C8F9900555806 /* DimmingPresentationController.swift */,
 				8B8AE43F2209DFB200B24839 /* SearchViewController.swift */,
 				8B8AE44F220A2FD900B24839 /* SearchResult.swift */,
@@ -164,6 +167,7 @@
 				8B8AE454220AC5A500B24839 /* SearchResultCell.swift in Sources */,
 				8B4CA60F220C65EC00555806 /* DetailViewController.swift in Sources */,
 				8B8AE43E2209DFB200B24839 /* AppDelegate.swift in Sources */,
+				8B4CA613220D963600555806 /* GradientView.swift in Sources */,
 				8B4CA60D220C621600555806 /* UIImageView+DownloadImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
