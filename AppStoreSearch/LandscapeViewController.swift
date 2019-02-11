@@ -64,7 +64,7 @@ class LandscapeViewController: UIViewController {
             case .notSearchedYet:
                 break
             case .loading:
-                break
+                showSpinner()
             case .noResults:
                 break
             case .results(let list):
@@ -83,6 +83,18 @@ class LandscapeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Public Methods
+    func searchResultsReceived() {
+        hideSpinner()
+        
+        switch search.state {
+        case .notSearchedYet, .loading, .noResults:
+            break
+        case .results(let list):
+            tileButtons(list)
+        }
+    }
     
     // MARK: - Private Methods
     private func tileButtons(_ searchResults: [SearchResult]) {
@@ -178,6 +190,18 @@ class LandscapeViewController: UIViewController {
             task.resume()
             downloads.append(task)
         }
+    }
+    
+    private func showSpinner() {
+        let spinner = UIActivityIndicatorView(style: .whiteLarge)
+        spinner.center = CGPoint(x: scrollView.bounds.midX + 0.5, y: scrollView.bounds.midY + 0.5)
+        spinner.tag = 1000
+        view.addSubview(spinner)
+        spinner.startAnimating()
+    }
+    
+    private func hideSpinner() {
+        view.viewWithTag(1000)?.removeFromSuperview()
     }
 }
 

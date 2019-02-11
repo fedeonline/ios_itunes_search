@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Search {
     enum State {
@@ -42,10 +43,10 @@ class Search {
     
     func performSearch(for text: String, category: Category, completion: @escaping SearchComplete) {
         if !text.isEmpty {
-            
             // cancel previous search
             dataTask?.cancel()
             state = .loading
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
                 
             let url = iTunesURL(searchText: text, category: category)
             let session = URLSession.shared
@@ -71,6 +72,7 @@ class Search {
                 DispatchQueue.main.async {
                     // assign state in main thread to avoid race condition
                     self.state =  newState
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     completion(success)
                 }
             })
