@@ -88,24 +88,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landscape Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2a-a2-ywX">
-                                <rect key="frame" x="218" y="149.5" width="132" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HwD-qV-Zgu">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7cP-0x-jzM" id="uBf-iu-TtH"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7BZ-Gw-DPA">
+                                <rect key="frame" x="264" y="141" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="pageChanged:" destination="7cP-0x-jzM" eventType="valueChanged" id="1DX-ot-MeU"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="J2a-a2-ywX" firstAttribute="centerY" secondItem="ghr-lJ-A5z" secondAttribute="centerY" id="PNL-0x-VcH"/>
-                            <constraint firstItem="J2a-a2-ywX" firstAttribute="centerX" secondItem="ghr-lJ-A5z" secondAttribute="centerX" id="mtC-fj-zn3"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DDI-ik-cpU"/>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="7BZ-Gw-DPA" id="FdL-Pz-ckK"/>
+                        <outlet property="scrollView" destination="HwD-qV-Zgu" id="THv-Qg-b5a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7v-H7-Zvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682.3943661971831" y="821.25"/>
+            <point key="canvasLocation" x="262" y="1551"/>
         </scene>
         <!--Detail-->
         <scene sceneID="D7c-Zm-miP">
